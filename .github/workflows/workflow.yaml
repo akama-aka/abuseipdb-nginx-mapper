@@ -1,8 +1,7 @@
 name: Build
 on: [pull_request, push]
 permissions:
-  contents: write
-  packages: write
+  write-all
 jobs: 
   build:
     runs-on: windows-latest
@@ -13,6 +12,7 @@ jobs:
       - name: Checkout Sources
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup Dotnet ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v4
@@ -26,6 +26,6 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           title: "Map Build"
           automatic_release_tag: latest
-          prerelease: 'false'
+          prerelease: false
           files: |
             *.conf

@@ -1,5 +1,9 @@
 name: Build
-on: [pull_request, push]
+on: 
+  pull_request:
+  push:
+  schedule:
+    - cron: '0 7 1 * *'
 permissions:
   write-all
 jobs: 

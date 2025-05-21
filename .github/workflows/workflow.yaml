@@ -19,9 +19,7 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Build Dotnet
-        run: | 
-        dotnet build
-        dotnet run
+        run: dotnet build && dotnet run
       - name: Publish Configuration
         uses: marvinpinto/action-automatic-releases@latest
         with:

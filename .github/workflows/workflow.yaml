@@ -19,7 +19,9 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Build Dotnet
-        run: dotnet build
+        run: | 
+        dotnet build
+        dotnet run
       - name: Publish Configuration
         uses: marvinpinto/action-automatic-releases@latest
         with:
@@ -28,4 +30,4 @@ jobs:
           automatic_release_tag: latest
           prerelease: false
           files: |
-            *.conf
+            ./bin/Debug/net8.0/nginx.conf

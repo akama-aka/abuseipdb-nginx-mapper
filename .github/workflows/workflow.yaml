@@ -7,14 +7,18 @@ jobs:
       matrix: 
         dotnet-version: [ '8.0.x' ]
     steps:
-      - uses: actions/checkout@4
+      - name: Checkout Sources
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
       - name: Setup Dotnet ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Build Dotnet
         run: dotnet build
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - name: Publish Configuration
+        uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: 'false'

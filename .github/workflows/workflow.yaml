@@ -23,7 +23,9 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Build Dotnet
-        run: dotnet build && dotnet run
+        run: dotnet run
+      - name: Build RPM Package
+        run: dotnet tool install --global dotnet-rpm --version 0.1.232 && dotnet rpm install && dotnet rpm
       - name: Publish Configuration
         uses: marvinpinto/action-automatic-releases@latest
         with:
@@ -33,3 +35,4 @@ jobs:
           prerelease: false
           files: |
             *.conf
+            *.rpm

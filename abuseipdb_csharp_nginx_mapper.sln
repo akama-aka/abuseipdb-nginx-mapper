@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ipabusedb_mmdb", "ipabusedb_mmdb.csproj", "{5EE8C8D5-3367-4999-AEBC-09EDADC16045}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "abuseipdb_csharp_nginx_mapper", "abuseipdb_csharp_nginx_mapper.csproj", "{5EE8C8D5-3367-4999-AEBC-09EDADC16045}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

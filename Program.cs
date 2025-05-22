@@ -1,10 +1,10 @@
 ﻿using System.Net;
 
-namespace ipabusedb_mmdb;
+namespace abuseipdb_csharp_nginx_mapper;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         var client = new HttpClient();
         string[] nginxFormatedList = new string[0];

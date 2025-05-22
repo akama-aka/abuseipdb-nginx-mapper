@@ -8,7 +8,7 @@ permissions:
   write-all
 jobs: 
   build:
-    runs-on: self-hosted
+    runs-on: [windows-latest,self-hosted]
     strategy:
       matrix: 
         dotnet-version: [ '8.0.x' ]
@@ -22,6 +22,8 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
+      - name: Writing Keyfile
+        run: echo ${{secrets.SKEY}} > abuseipdb.snk
       - name: Build Dotnet
         run: dotnet run
       - name: Build RPM Package

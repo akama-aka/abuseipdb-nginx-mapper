@@ -22,8 +22,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
-      - name: Writing Keyfile
-        run: echo ${{secrets.SKEY}} > abuseipdb.snk
       - name: Build Dotnet
         run: dotnet run
       - name: Build RPM Package

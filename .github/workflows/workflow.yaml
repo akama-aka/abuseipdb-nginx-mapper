@@ -25,7 +25,10 @@ jobs:
       - name: Build Dotnet
         run: dotnet run
       - name: Build RPM Package
-        run: dotnet tool install --global dotnet-rpm --version 0.1.232 & dotnet rpm install & dotnet rpm
+      - run: |
+          dotnet tool install --global dotnet-rpm --version 0.1.232
+          dotnet rpm install 
+          dotnet rpm 
       - name: Publish Configuration
         uses: marvinpinto/action-automatic-releases@latest
         with:

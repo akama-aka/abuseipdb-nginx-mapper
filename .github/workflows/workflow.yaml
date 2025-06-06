@@ -25,7 +25,7 @@ jobs:
       - name: Build Dotnet
         run: dotnet run
       - name: Build RPM Package
-      - run: |
+        run: |
           dotnet tool install --global dotnet-rpm --version 0.1.232
           dotnet rpm install 
           dotnet rpm 
